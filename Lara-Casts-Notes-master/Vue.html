@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+<div id="root">
+    <input type="text" id="input" v-model="message">
+
+    <p> The Value of the input is : {{ message }}.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    let data = 
+    {
+        message: "Hello World"
+    };
+
+    new Vue (       // this binds data to root and when one changes it updates
+        {
+            el: "#root",        // surface area
+
+            data: {
+                message: "Hello World"
+            }
+        })
+
+        // create vue instance, specify data, bind to element
+</script>
+
+</body>
+
+</html>

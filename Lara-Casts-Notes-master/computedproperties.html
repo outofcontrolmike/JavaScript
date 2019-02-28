@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    
+</head>
+
+<body>
+
+<div id="root">
+
+    <h2> All Tasks</h2>
+        <ul>
+            <li v-for="task in tasks" v-text="task.description"></li>
+        </ul>
+
+    <h2>Incomplete Tasks</h2>
+        <ul>
+            <li v-for="task in incompleteTasks" v-text="task.description"></li>
+        </ul>
+    
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+  
+    var app = new Vue (       // this binds data to root and when one changes it updates
+        {
+            el:"#root",
+            
+            data: 
+            {
+                tasks: [
+                    { description: "Go to the Store", completed: true },
+                    { description: "Clean nana", completed: false },
+                    { description: "Finish Final", completed: false },
+                    { description: "Go to the damn work", completed: true },
+                ]
+
+            },
+
+            computed:
+            {
+              incompleteTasks() 
+              {
+                  return this.tasks.filter(task => ! task.completed);
+
+                  this.ta
+              }
+            }
+           
+         })
+
+    
+</script>
+
+</body>
+
+</html>

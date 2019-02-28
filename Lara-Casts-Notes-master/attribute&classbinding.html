@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        .is-loading { background: red; }
+
+    </style>
+</head>
+
+<body>
+
+<div id="root">
+
+    <button :class="{'is-loading': isLoading}" @click="toggleClass">Toggle me</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+  
+    var app = new Vue (       // this binds data to root and when one changes it updates
+        {
+            el:"#root",
+            data: 
+            {
+                isLoading: false
+            
+
+            },
+
+            methods: 
+            {
+                toggleClass() 
+                {
+                    this.isLoading = true;
+                }
+            }
+           
+         })
+
+    
+</script>
+
+</body>
+
+</html>

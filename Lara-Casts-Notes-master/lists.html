@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+<div id="root">
+    <ul>
+        <li v-for="name in names" v-text="name">{{ name }}</li>
+    </ul>
+
+<input v-model="newName" id="input" type="text">
+
+<button v-on:click="addName" >Add Name</button> <!-- v-on registers event listener-->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+  
+    var app = new Vue (       // this binds data to root and when one changes it updates
+        {
+            el: "#root",        // surface area
+
+            data:
+             {
+                 newName: '',
+                names: ['Betty', 'Joe', "Jane", "jack"]
+            },
+
+            methods: {
+                addName() {
+                    this.names.push(this.newName);
+
+                    this.newName='';
+                }
+            },
+
+        // // create vue instance, specify data, bind to element
+        //     }
+         })
+
+    
+</script>
+
+</body>
+
+</html>
